@@ -29,6 +29,7 @@
 
 #define LED1_ON()   LED1_Set()
 #define LED1_OFF()  LED1_Clear()
+#define BTN_PRESSED 0
 
 // *****************************************************************************
 // *****************************************************************************
@@ -44,10 +45,16 @@ int main ( void )
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
-        LED1_ON();
-        CORETIMER_DelayMs(100);
-        LED1_OFF();
-        CORETIMER_DelayMs(100);
+//        LED1_ON();
+//        CORETIMER_DelayMs(100);
+//        LED1_OFF();
+//        CORETIMER_DelayMs(100);
+        
+        // Polling
+        if (BTN1_Get() == BTN_PRESSED)
+            LED1_ON();
+        else
+            LED1_OFF();
     }
 
     /* Execution should not come here during normal operation */

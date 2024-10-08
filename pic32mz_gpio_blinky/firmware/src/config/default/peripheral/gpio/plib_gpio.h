@@ -71,6 +71,15 @@
 #define LED1_Get()               ((PORTH >> 0) & 0x1U)
 #define LED1_PIN                  GPIO_PIN_RH0
 
+/*** Macros for BTN1 pin ***/
+#define BTN1_Set()               (LATBSET = (1U<<12))
+#define BTN1_Clear()             (LATBCLR = (1U<<12))
+#define BTN1_Toggle()            (LATBINV= (1U<<12))
+#define BTN1_OutputEnable()      (TRISBCLR = (1U<<12))
+#define BTN1_InputEnable()       (TRISBSET = (1U<<12))
+#define BTN1_Get()               ((PORTB >> 12) & 0x1U)
+#define BTN1_PIN                  GPIO_PIN_RB12
+
 
 // *****************************************************************************
 /* GPIO Port
