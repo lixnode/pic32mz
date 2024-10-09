@@ -27,6 +27,7 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 
+#include "../pic32mz_sensor_dh11.X/dht.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -42,7 +43,8 @@ int main ( void )
     while ( true )
     {
         /* Maintain state machines of all polled MPLAB Harmony modules. */
-        SYS_Tasks ( );
+        printf("hello world\n");
+        CORETIMER_DelayMs(1000);
     }
 
     /* Execution should not come here during normal operation */
